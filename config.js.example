@@ -1,0 +1,15 @@
+module.exports = {
+  api: {
+    ip: 'localhost',
+    port: 3333,
+    protocol: 'http'
+  },
+  socket: {
+    ip: 'localhost',
+    port: 3334
+  },
+  socket_pos: {
+    ip: 'localhost',
+    port: 3335
+  }
+}

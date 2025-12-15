@@ -1,0 +1,110 @@
+@import '../../assets/styles/variables.sass'
+
+.status-component
+  display: flex
+  flex: 1
+  flex-direction: row
+  max-width: 100%
+  .add-on-container
+    display: flex
+    border-right: 2px solid $White
+    cursor: pointer
+    &:nth-child(1)
+      flex: 1 1 1px
+      max-width: calc(100% - 200px)
+    &:nth-child(n+2)
+      max-width: 100px
+      min-width: 100px
+      text-align: center
+    .add-on
+      .prepend
+        border-radius: 0
+        cursor: pointer
+      .element
+        background: $GrayPearl
+        border-radius: 0
+        display: flex
+        align-items: center
+        padding: 0 .33rem
+        font-size: .85rem
+      &.bg-green
+        .element
+          background: $SuccessBg
+          color: $SuccessText
+      &.error,
+      &.bg-red
+        .element
+          background: $DangerBg
+          color: $DangerText
+      &.info,
+      &.bg-blue
+        .element
+          background: $InfoBg
+          color: $InfoText
+      &.warning,
+      &.bg-yellow
+        .element
+          background: $WarningBg
+          color: $WarningText
+      &.no-break
+        .prepend, .element
+          justify-content: center
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+      &:active
+        box-shadow: $ElevationShadow4
+
+  button.toggle-right-bar
+    border: none
+    width: 0
+    &:not(.visible)
+      padding: 0
+    &.visible
+      width: $PendantButtonsWidth !important
+    svg
+      font-size: 1.5rem
+
+  .message-list-container
+    flex: 1
+    flex-direction: column
+    display: flex
+    margin-top: 8rem
+    margin-bottom: 3rem
+    height: calc(100% - 11rem)
+    width: calc(100%)
+    .message-header
+      display: flex
+      padding-bottom: $smBoxPadding
+      h2
+        flex: 1
+    .message-list
+      flex: 1
+      position: relative
+      display: flex
+      flex-direction: column
+      overflow-y: scroll
+      margin-left: -#{$smBoxPadding}
+      margin-right: -#{$smBoxPadding}
+      margin-bottom: -#{$smBoxPadding}
+      @media #{$md}
+        margin-left: -#{$mdBoxPadding}
+        margin-right: -#{$mdBoxPadding}
+      @media #{$xlg}
+        margin-left: -#{$xlgBoxPadding}
+        margin-right: -#{$xlgBoxPadding}
+      .message
+        font-size: .7rem
+        font-family: 'Lucida Console', Monaco, monospace
+        padding: 1.25rem #{$smBoxPadding}
+        @media #{$md}
+          font-size: 1rem
+          padding: 1.25rem #{$mdBoxPadding}
+        @media #{$xlg}
+          padding: 1.25rem #{$xlgBoxPadding}
+        &:nth-child(odd)
+          background: $GrayPearl
+        &.error
+          color: red
+        &.warning
+          color: darkorange

@@ -1,0 +1,26 @@
+@import '../../assets/styles/variables.sass'
+.keyboard
+  position: absolute
+  height: auto
+  width: 330px
+  z-index: 99
+  &.numbers
+    width: 53.334vw
+  &.default
+    width: 86.667vw
+  &.hidden
+    display: none
+  .simple-keyboard
+    border: 1px solid orange
+    box-shadow: $ElevationShadow12
+    box-sizing: border-box
+    padding: 8px
+    .hg-button
+      flex: 1
+      font-size: 1.2rem
+      height: 50px
+      &.hg-button-alt,
+      &.hg-button-default
+        flex: 1
+      &.hg-button-space
+        flex: 3

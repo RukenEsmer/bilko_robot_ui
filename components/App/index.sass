@@ -1,0 +1,56 @@
+@import '../../assets/styles/variables.sass'
+
+body
+  margin: 0
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+  -webkit-font-smoothing: antialiased
+  -moz-osx-font-smoothing: grayscale
+
+code
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace
+
+*
+  box-sizing: border-box
+  user-select: none
+
+a
+  background-color: transparent
+  text-decoration: none
+  color: blue
+  transition: .2s all
+  &:visited
+    color: blue
+
+.animated.faster-50
+  -webkit-animation-duration: 50ms
+  animation-duration: 50ms
+.animated.faster-100
+  -webkit-animation-duration: 100ms
+  animation-duration: 100ms
+.animated.faster-200
+  -webkit-animation-duration: 200ms
+  animation-duration: 200ms
+.animated.faster-300
+  -webkit-animation-duration: 300ms
+  animation-duration: 300ms
+.animated.faster-400
+  -webkit-animation-duration: 400ms
+  animation-duration: 400ms
+
+.toastify-body
+  padding-left: .25rem
+
+::-webkit-scrollbar
+  width: $scrollbarWidth
+::-webkit-scrollbar-track
+  background: $GrayLilia
+::-webkit-scrollbar-thumb
+  background: $IndigoLighter
+  border: 2px solid transparent
+  border-top-width: 4px
+  border-bottom-width: 4px
+  border-radius: #{$scrollbarWidth / 2}
+
+.no-entry
+  margin-top: .66rem
+  text-align: center

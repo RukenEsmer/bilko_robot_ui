@@ -1,0 +1,52 @@
+@import '../../assets/styles/variables.sass'
+
+div.program-logs
+  display: flex
+  flex-direction: column
+  margin-right: #{-$scrollbarWidth - .25rem}
+  &.scrollable
+    overflow-y: scroll
+  .log
+    display: flex
+    flex-direction: row
+    font-size: .85rem
+    margin-bottom: .25rem
+    margin-right: .25rem
+    & > span
+      color: #004085
+      padding: .66rem 4px
+      display: flex
+      align-items: center
+    &.error > span
+      color: $RubyDarkest
+    &.warning > span
+      color: $WarningText
+    .icon
+      background: $GrayLilia
+      display: flex
+      align-items: center
+      justify-content: center
+      text-align: center
+      width: 40px
+      svg
+        font-size: 1rem
+    .time
+      background: $GrayLilia
+      width: 72px
+    .source
+      background: $GrayLilia
+      width: 80px
+    .message
+      background: $GrayLilia
+      flex: 1
+      justify-content: left
+      text-align: left
+      max-width: calc(100% - 184px)
+      word-break: break-all
+      white-space: break-spaces
+    &.header
+      border-bottom: 2px solid $GrayPearl
+      margin-right: #{$scrollbarWidth + .25rem}
+      & > span
+        color: $BlackJet
+        font-weight: 700

@@ -1,0 +1,57 @@
+@import '../../assets/styles/variables.sass'
+
+$width: 3.25rem
+$height: 3.25rem
+$fontSize: .9rem
+$iconFontSize: 1.1rem
+$gapBetween: .75rem
+$tinyGap: .66rem
+$smallGap: 1.5rem
+$offsetGap: #{$smallGap + $height + $tinyGap}
+
+.floating-button-container
+  display: flex
+  flex-direction: column
+  margin: #{-$gapBetween / 2}
+  padding: #{$gapBetween / 2}
+  position: absolute
+  transition: .2s all
+  z-index: 31
+  button
+    min-width: $width
+    height: $height
+    border-radius: #{$width}
+    z-index: 1
+    overflow: hidden
+    &:disabled
+      background-color: $Gray
+    svg
+      font-size: $iconFontSize
+      margin-left: .33rem
+      margin-right: .33rem
+      width: $iconFontSize
+      height: $iconFontSize
+
+  &.bottom-right
+    top: auto
+    bottom: $smallGap
+    right: $smallGap
+    left: auto
+
+  &.bottom-left
+    top: auto
+    bottom: $smallGap
+    right: auto
+    left: $smallGap
+
+  &.top-right
+    top: $smallGap
+    bottom: auto
+    right: $smallGap
+    left: auto
+
+  &.top-left
+    top: $smallGap
+    bottom: auto
+    right: auto
+    left: $smallGap

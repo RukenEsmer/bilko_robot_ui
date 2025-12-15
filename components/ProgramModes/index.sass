@@ -1,0 +1,87 @@
+@import '../../assets/styles/variables.sass'
+.program-modes
+  display: flex
+  width: $TitleWidth
+  .toggle-modes
+    cursor: pointer
+    display: flex
+    flex: 1
+    text-align: center
+    transition: .2s all
+    align-items: center
+    justify-content: center
+    user-select: none
+    &:hover,
+    &:active
+      background: transparentize($IndigoDarkest, .85)
+    &.active
+      background-color: $IndigoLighter
+    &.disabled
+      color: $GrayDisabled
+      opacity: 0.33 !important
+      background-color: transparent
+      cursor: not-allowed
+      pointer-events: none
+  .modes
+    background-color: $White
+    border-radius: .25rem
+    box-shadow: $ElevationShadow6
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    margin-top: 9px
+    padding: .5rem 0
+    position: absolute
+    top: calc(100%)
+    width: $sidebarDropdownWidth
+    z-index: 40
+    &::before
+      border-bottom: 8px solid $White
+      border-left: 8px solid rgba(0, 0, 0, 0)
+      border-right: 8px solid rgba(0, 0, 0, 0)
+      content: ""
+      display: inline-block
+      left: #{$TitleWidth / 2 - 4px}
+      position: absolute
+      top: -8px
+    & > button.connected
+      background-color: $White
+      border-bottom: 1px solid $GrayHeather
+      border-radius: 0
+      flex: 1
+      padding: 1.25rem
+      text-align: left
+      z-index: 41
+      &:first-child
+        border-top: 1px solid $GrayHeather
+      &:active
+        box-shadow: none
+        background: $GrayPearl
+      & > div
+        justify-content: flex-start
+      &:nth-child(n+15)
+      .icon
+        margin-right: .33rem
+        background: $BlackRaven
+        border: none
+        border-radius: 1rem
+        color: $White
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+        font-size: .9rem
+        line-height: 0
+        height: 1.66rem
+        width: 1.66rem
+        &.mode-programming
+          background: $WarningText
+        &.mode-manual
+          background: $InfoText
+        &.mode-auto
+          background: $SuccessText
+        &.mode-reconfigure
+        &.mode-simulation-start
+          background: $SuccessText
+        &.mode-simulation-stop
+          background: $DangerText

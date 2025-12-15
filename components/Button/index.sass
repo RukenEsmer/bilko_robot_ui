@@ -1,0 +1,171 @@
+@import '../../assets/styles/variables.sass'
+
+button.connected
+  background: $GrayLilia
+  border: 1px solid transparent
+  border-radius: .25rem
+  box-sizing: border-box
+  color: $BlackRaven
+  cursor: pointer
+  display: inline-block
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif
+  outline: none
+  padding: .33rem .66rem
+  transition: .2s all
+  user-select: none
+  & > div
+    display: flex
+    align-items: center
+    justify-content: center
+  &:active
+    background: $GrayPearl
+    box-shadow: $ElevationShadow4
+  &.shadow
+    box-shadow: $ElevationShadow4
+    &:hover:enabled
+      box-shadow: $ElevationShadow6
+    &:active:enabled
+      box-shadow: $ElevationShadow8
+  &.outlined
+    background: transparent
+    border: 1px solid $Gray
+    &:hover
+      background: $GrayPearl
+    &:active
+      background: $Gray
+  &.primary
+    background: $IndigoDarkest
+    color: $White
+    &:hover
+      background: $Indigo
+    &:active
+      background: $Indigo
+    &.outlined
+      background: transparent
+      border: 1px solid $Indigo
+      color: $Indigo
+      &:hover
+        background: #e6ebee // transparentize($Indigo, .9)
+        border-color: $IndigoDarkest
+        color: $IndigoDarkest
+      &:active
+        background: $Indigo
+        border-color: $Indigo
+        color: $White
+  &.secondary
+    background: $Ruby
+    color: $White
+    &:active
+      background: $RubyDarker
+    &.outlined
+      background: transparent
+      border: 1px solid $Ruby
+      color: $Ruby
+      &:hover
+        background: #f9eae8 // transparentize($Ruby, .9)
+        border-color: $RubyDarkest
+        color: $RubyDarkest
+      &:active
+        background: $Ruby
+        border-color: $Ruby
+        color: $White
+  &.success
+    background: $Success
+    color: $White
+    &:hover
+      background: $SuccessHover
+    &:active
+      background: $SuccessActive
+    &.outlined
+      background: transparent
+      border: 1px solid $Success
+      color: $Success
+      &:hover
+        background: #e9f6ec // transparentize($Success, .9)
+        border-color: $SuccessHover
+        color: $SuccessHover
+      &:active
+        background: $SuccessActive
+        border-color: $SuccessActive
+        color: $White
+  &.danger
+    background: $Danger
+    color: $White
+    &:hover
+      background: $DangerHover
+    &:active
+      background: $DangerActive
+    &.outlined
+      background: transparent
+      border: 1px solid $Danger
+      color: $Danger
+      &:hover
+        background: transparentize($Danger, .9)
+        border-color: $DangerHover
+        color: $DangerHover
+      &:active
+        background: $DangerActive
+        border-color: $DangerActive
+        color: $White
+  &.clear
+    background: transparent
+  &.clear-lighter
+    background: transparent
+    color: $BlackStone
+  &.clear-primary
+    background: transparent
+    color: $Indigo
+  &.clear-secondary
+    background: transparent
+    color: $Ruby
+  &.clear-success
+    background: transparent
+    color: $Success
+  &.clear-danger
+    background: transparent
+    color: $Danger
+  &.flat
+    border-radius: 0
+  &.small
+    font-size: .85rem
+    padding: .375rem .5rem
+  &.large
+    font-size: 1.25rem
+    line-height: 1.5
+    padding: .5rem 1rem
+  &.splash
+    border-radius: 0
+    font-size: 1.5rem
+    line-height: 1.75
+    padding: 1rem
+  &.control
+    padding: 15px 5px
+    @media #{$md}
+      padding: 20px 5px
+  &:disabled,
+  &.primary:disabled,
+  &.secondary:disabled,
+  &.success:disabled,
+  &.danger:disabled
+    background: $GrayDisabled
+    border-color: $GrayHeather
+    box-shadow: none
+    color: $GraySterling
+    cursor: not-allowed
+    &:hover, &:active
+      background: $GrayDisabled
+      border-color: $GrayHeather
+      box-shadow: none
+      color: $GraySterling
+      cursor: not-allowed
+  &.clear:disabled
+    background: transparent
+    border-color: transparent
+    color: $GraySterling
+    cursor: not-allowed
+
+div.input-group > button
+  svg.icon-left
+    margin-right: .33rem
+  svg.icon-right
+    margin-left: .33rem

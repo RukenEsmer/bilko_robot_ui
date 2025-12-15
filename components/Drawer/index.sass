@@ -1,0 +1,21 @@
+@import '../../assets/styles/variables.sass'
+
+div.drawer
+  display: flex
+  flex-direction: column
+  div.drawer-header
+    display: flex
+    align-items: center
+    cursor: pointer
+    position: relative
+    &.disable-action
+      cursor: default
+    .content
+      flex: 1
+    .button
+      padding-left: .5rem
+      padding-right: .5rem
+  div.drawer-body
+    max-height: 0
+    overflow: hidden
+    transition: .2s all

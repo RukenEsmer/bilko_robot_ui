@@ -1,0 +1,71 @@
+@import '../../assets/styles/variables.sass'
+
+.modal
+  padding: $smBoxPadding
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: $Backdrop
+  z-index: 60
+  overflow: hidden
+  display: flex
+  flex-wrap: wrap
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  @media #{$md}
+    display: flex
+    align-items: center
+  &.backdrop-light
+    background: $BackdropLight
+  &.backdrop-none
+    background: transparent
+  .modal-body
+    display: flex
+    flex-direction: column
+    overflow: hidden
+    .modal-content
+      background: $White
+      border-radius: .25rem
+      box-shadow: $ElevationShadow4
+      display: flex
+      flex-direction: column
+      position: relative
+      overflow-y: auto
+      overflow-x: hidden
+      padding: $mdBoxPadding
+      min-width: 300px
+    .modal-close
+      align-self: flex-end
+      cursor: pointer
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: flex-end
+      min-height: 48px
+      padding-top: 48px
+      padding-right: 20px
+      transition: .2s all
+      width: 100%
+      z-index: 1
+      &:hover, &:active
+        padding-top: 43px
+        padding-bottom: 5px
+      .lr
+        width: 2px
+        height: 36px
+        margin-left: 30px
+        -webkit-transform: rotate(45deg)
+        transform: rotate(45deg)
+        background-color: $GrayPearl
+        .rl
+          width: 2px
+          height: 36px
+          -webkit-transform: rotate(90deg)
+          transform: rotate(90deg)
+          background-color: $GrayPearl
+  .modal
+    background: $BackdropDarker
+    position: absolute

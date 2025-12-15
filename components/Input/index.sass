@@ -1,0 +1,67 @@
+@import '../../assets/styles/variables.sass'
+
+input.connected
+  background: $White
+  border: 1px solid $GrayPearl
+  border-radius: .25rem
+  box-sizing: border-box
+  color: $BlackJet
+  font-size: 14px
+  line-height: 14px
+  outline: none
+  overflow: hidden
+  padding: 12px 8px
+  transition: .2s all
+  @media #{$md}
+    padding: 20px 8px
+  &:focus
+    border-color: $Indigo
+  &:disabled
+    background: $GrayLilia
+    color: $GrayDisabled
+    cursor: not-allowed
+
+.input-group
+  display: flex
+  flex: 1
+  flex-direction: row
+  position: relative
+  width: 100%
+  .prepend
+    align-items: center
+    display: flex
+    font-size: .9rem
+    margin-right: .25rem
+  .append
+    align-items: center
+    display: flex
+    font-size: .9rem
+    margin-left: .25rem
+  input.connected
+    flex: 1
+  &.outlined
+    .prepend
+      border: 1px solid $GrayPearl
+  &.default
+    .prepend
+      background: $GrayLilia
+  &.primary
+    .prepend
+      background: $Indigo
+      color: $White
+  &.secondary
+    .prepend
+      background: $Ruby
+      color: $White
+  &.required::after
+    content: "*"
+    color: red
+    font-weight: bold
+    position: absolute
+    right: .25rem
+    top: .25rem
+    width: .66rem
+    height: .66rem
+    display: flex
+    align-items: center
+    justify-content: center

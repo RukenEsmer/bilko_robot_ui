@@ -1,0 +1,159 @@
+@import '../../assets/styles/variables.sass'
+
+$width: 3.25rem
+$height: 3.25rem
+$fontSize: .9rem
+$iconFontSize: 1.1rem
+$gapBetween: .75rem
+$smallGap: 1.5rem
+$offsetGap: #{$smallGap + $height + $gapBetween}
+
+.toolbox-container
+  transition: .2s all
+  position: absolute
+  bottom: $smallGap
+  display: flex
+  flex-direction: row-reverse
+  font-size: $fontSize
+  align-items: flex-end
+  justify-content: flex-end
+  margin: #{-$gapBetween / 2}
+  padding: #{$gapBetween / 2}
+  z-index: 30
+  &
+    button.toolbox-toggle
+      min-width: $width
+      height: $height
+      line-height: $fontSize
+      border-radius: #{$width}
+      overflow: hidden
+      z-index: 1
+      &.outlined
+        background: $White
+      .icon
+        font-size: $iconFontSize
+        margin-left: .33rem
+        margin-right: .33rem
+        line-height: $iconFontSize
+        width: $iconFontSize
+        height: $iconFontSize
+    .toolbox
+      display: flex
+      align-items: flex-end
+      justify-content: center
+      z-index: 1
+      button.toolbox-tool
+        min-width: $width
+        height: $height
+        line-height: $fontSize
+        border-radius: #{$width}
+        display: flex
+        align-items: center
+        justify-content: center
+        .label
+          margin-right: .33rem
+        .icon
+          font-size: $iconFontSize
+          margin-left: .33rem
+          margin-right: .33rem
+          line-height: $iconFontSize
+          width: $iconFontSize
+          height: $iconFontSize
+
+  &.bottom-right
+    flex-direction: column-reverse
+    top: auto
+    right: $smallGap
+    bottom: $smallGap
+    left: auto
+    .toolbox
+      flex-direction: column-reverse
+      button.toolbox-tool
+        margin: 0 0 $gapBetween
+
+  &.bottom-left
+    align-items: flex-start
+    flex-direction: column-reverse
+    top: auto
+    right: auto
+    bottom: $smallGap
+    left: $smallGap
+    .toolbox
+      align-items: flex-start
+      flex-direction: column-reverse
+      button.toolbox-tool
+        margin: 0 0 $gapBetween
+
+  &.top-right
+    flex-direction: column
+    top: $smallGap
+    right: $smallGap
+    bottom: auto
+    left: auto
+    .toolbox
+      flex-direction: column
+      button.toolbox-tool
+        margin: $gapBetween 0 0
+
+  &.top-left
+    align-items: flex-start
+    flex-direction: column
+    top: $smallGap
+    right: auto
+    bottom: auto
+    left: $smallGap
+    .toolbox
+      align-items: flex-start
+      flex-direction: column
+      button.toolbox-tool
+        margin: $gapBetween 0 0
+
+  &.sideways
+    .button-group .label
+      display: none
+
+    &.bottom-right
+      flex-direction: row-reverse
+      top: auto
+      right: $smallGap
+      bottom: $smallGap
+      left: auto
+      .toolbox
+        flex-direction: row-reverse
+        button.toolbox-tool
+          margin: 0 $gapBetween 0 0
+
+    &.bottom-left
+      align-items: flex-start
+      flex-direction: row
+      top: auto
+      right: auto
+      bottom: $smallGap
+      left: $smallGap
+      .toolbox
+        flex-direction: row
+        button.toolbox-tool
+          margin: 0 0 0 $gapBetween
+
+    &.top-right
+      flex-direction: row-reverse
+      top: $smallGap
+      right: $smallGap
+      bottom: auto
+      left: auto
+      .toolbox
+        flex-direction: row-reverse
+        button.toolbox-tool
+          margin: 0 $gapBetween 0 0
+
+    &.top-left
+      align-items: flex-start
+      flex-direction: row
+      top: $smallGap
+      right: auto
+      bottom: auto
+      left: $smallGap
+      .toolbox
+        flex-direction: row
+        button.toolbox-tool
+          margin: 0 0 0 $gapBetween

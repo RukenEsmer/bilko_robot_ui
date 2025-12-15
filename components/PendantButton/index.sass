@@ -1,0 +1,68 @@
+@import '../../assets/styles/variables.sass'
+
+div.pendant-button
+  color: $BlackJet
+  position: relative
+  align-items: center
+  justify-content: center
+  display: flex
+  font-size: .95rem
+  .button
+    align-items: center
+    justify-content: center
+    display: flex
+    flex: 1
+    height: 100%
+    margin: 0
+    min-height: 60px
+    width: $PendantButtonsWidth
+    text-align: center
+    transition: .2s all
+    z-index: 1
+    span
+      border-radius: 50%
+      line-height: 40px
+      width: 40px
+      min-height: 40px
+      transition: .2s all
+    &:active,
+    &.active
+      background: $RubyLighter
+      color: $White
+  .content
+    background: $RubyLighter
+    border-radius: .25rem
+    box-shadow: $ElevationShadow6
+    color: $White
+    min-height: 50px
+    min-width: 270px
+    top: 0
+    right: calc(100% + 8px)
+    padding: 1.5rem 1rem
+    position: absolute
+    &::before
+      border-left: 8px solid $RubyLighter
+      border-bottom: 8px solid rgba(0, 0, 0, 0)
+      border-top: 8px solid rgba(0, 0, 0, 0)
+      content: ""
+      display: inline-block
+      top: 24px
+      position: absolute
+      right: -8px
+  &.icon-button
+    .button
+      span
+        display: flex
+        align-items: center
+        justify-content: center
+        border-radius: 20px
+        padding: 5px
+        overflow: hidden
+        svg
+          font-size: 1.5rem
+  &.disabled
+    color: $GrayDisabled
+    opacity: 0.33 !important
+    background-color: transparent
+    cursor: not-allowed
+    pointer-events: none

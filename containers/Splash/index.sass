@@ -1,0 +1,28 @@
+@import '../../assets/styles/variables.sass'
+
+div.splash
+  display: flex
+  flex-direction: row
+  min-height: 100vh
+  z-index: 9999
+  color: #093145
+  .image-spinner-container
+    flex: 1
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    .loader
+      margin-bottom: 30px
+      & > span
+        display: block
+    .loading-message
+      font-size: 1.25rem
+      text-align: center
+
+.ws-message
+  animation-delay: 2s
+  animation-duration: 4s
+.tcp-message
+  animation-delay: 2s
+  animation-duration: 4s

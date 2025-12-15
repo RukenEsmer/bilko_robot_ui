@@ -1,0 +1,37 @@
+@import '../../assets/styles/variables.sass'
+
+.program-move-jog
+  display: flex
+  flex-direction: column
+  & > div
+    display: flex
+    flex-wrap: wrap
+    & > select.connected
+      flex: 1
+      margin-bottom: .33rem
+    & > button.connected
+      flex: 1 1 14.30%
+      flex-wrap: wrap
+      margin-bottom: .33rem
+      margin-right: .165rem
+      margin-left: .165rem
+    &.base,
+    &.parameters,
+    &.translation.rotation
+      margin-right: -.165rem
+      margin-left: -.165rem
+
+  .input-group
+    flex-basis: 33.4%
+    margin-bottom: .33rem
+    margin-left: .165rem
+    margin-right: .165rem
+    .prepend
+      border-radius: .25rem
+      justify-content: center
+      text-align: center
+      width: calc(33.33% - 0.16665rem)
+      .label
+        font-size: .66rem
+    input
+      text-align: center

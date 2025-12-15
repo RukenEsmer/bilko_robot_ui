@@ -1,0 +1,27 @@
+@import '../../assets/styles/variables.sass'
+
+main.internal
+  display: flex
+  flex-direction: row
+  min-height: 100vh
+  max-height: 100vh
+  overflow: hidden
+  div.main-container
+    display: flex
+    flex: 1
+    flex-direction: column
+    overflow: hidden
+    transition: .2s all
+  aside.bar-container
+    display: flex
+    flex-direction: column
+    transition: .2s all
+    width: 0
+    z-index: 52
+    &.visible
+      box-shadow: $ElevationShadow6
+      width: $PendantButtonsWidth
+    button.toggle-right-bar
+      height: #{$TitleHeight * .66}
+      svg
+        font-size: 1.5rem

@@ -1,0 +1,57 @@
+@import '../../assets/styles/variables.sass'
+
+header.page-header
+  background: $Indigo
+  box-shadow: $ElevationShadow4
+  color: $White
+  display: flex
+  align-items: center
+  height: 4rem
+  min-height: 4rem
+  position: relative
+  .go-back
+    border: none
+    background: transparent
+    color: $White
+    display: flex
+    align-items: center
+    justify-content: flex-start
+    font-size: 1.25rem
+    padding-left: 1.5rem
+    transition: .2s all
+    height: 100%
+    width: 30%
+    z-index: 2
+    &:hover
+      padding-left: 2rem
+    &.disabled, &:disabled
+      color: $GrayDisabled
+      opacity: 0.33 !important
+      &:hover
+        padding-left: 1.5rem
+  .inner
+    align-items: center
+    display: flex
+    font-weight: 700
+    justify-content: center
+    line-height: 1
+    position: absolute
+    width: 100%
+    z-index: 1
+    transition: .2s all
+  .right
+    display: flex
+    flex: 1
+    align-items: center
+    justify-content: flex-end
+    height: 100%
+    transition: .2s all
+    z-index: 2
+    background: transparent
+    &.bg
+    .header-button
+      padding-right: 1.5rem
+      padding-left: 1.5rem
+      height: 100%
+      .icon
+        margin-right: .35rem

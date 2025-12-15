@@ -1,0 +1,70 @@
+@import '../../assets/styles/variables.sass'
+
+select.connected
+
+.input-group > div.select.connected
+  width: 100%
+  flex: 1
+
+div.select.connected
+  background: $White
+  border: 1px solid $GrayPearl
+  border-radius: 4px
+  box-sizing: border-box
+  color: $BlackJet
+  cursor: pointer
+  display: inline-block
+  font-size: 1rem
+  line-height: 1
+  outline: none
+  overflow: hidden
+  position: relative
+  transition: .2s all
+  &.active
+    border-color: $IndigoLighter
+  &:focus
+  &:disabled, &.disabled
+    background: $GrayLilia
+    color: $GrayDisabled
+    cursor: not-allowed
+  .selection
+    display: flex
+    flex-direction: row
+    align-items: center
+    line-height: 1
+    padding: 16px 12px
+    @media #{$md}
+      padding: 24px 12px
+    .value
+      flex: 1
+    .arrow
+      line-height: 1
+      margin-left: .75rem
+  .options
+    background: $White
+    border: 1px solid $GrayHeather
+    border-radius: 4px
+    box-shadow: $ElevationShadow1
+    color: $BlackJet
+    font-size: .9rem
+    margin: 2px 0
+    padding: 4px 0
+    position: fixed
+    overflow: auto
+    z-index: 999
+    .option
+      cursor: pointer
+      padding: 16px 12px
+      &:hover
+        background: $GrayLilia
+      &.active,
+      &:active
+        background: $GrayPearl
+  &.dense
+    .selection
+      font-size: 1rem
+      line-height: 1
+      padding: 12px 8px
+      @media #{$md}
+        font-size: 1rem
+        padding: 20px 8px

@@ -1,0 +1,29 @@
+@import '../../assets/styles/variables.sass'
+
+div.program-move-to-target
+  display: flex
+  flex: 1
+  flex-direction: row
+  flex-wrap: wrap
+  .input-group
+    flex-basis: 50.1%
+    margin-bottom: .33rem
+    margin-right: .33rem
+    @media #{$md}
+      flex-basis: 33.4%
+    .prepend
+      border: 1px solid $GrayPearl
+      border-radius: .25rem
+      justify-content: center
+      width: 4.5rem
+      .label
+        font-size: .8rem
+    input
+      text-align: center
+  button
+    flex: 5
+    margin-right: .33rem
+    &:last-child
+      margin-right: 0
+  .teach
+    flex: 2

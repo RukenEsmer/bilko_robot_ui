@@ -1,0 +1,16 @@
+@import '../../assets/styles/variables.sass'
+
+section.routing > div .box
+  transition: .2s all
+  &.loading
+    align-items: center
+    display: flex
+    justify-content: center
+  &:last-child
+    @media #{$md}
+      margin-bottom: 0
+  .loading-container
+    display: flex
+    justify-content: center
+    padding: 32px 16px
+    transition: .2s all

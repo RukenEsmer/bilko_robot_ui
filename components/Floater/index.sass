@@ -1,0 +1,122 @@
+@import '../../assets/styles/variables.sass'
+
+$width: 3.25rem
+$height: 3.25rem
+$fontSize: .9rem
+$iconFontSize: 1.1rem
+$gapBetween: .75rem
+$tinyGap: .66rem
+$smallGap: 1.5rem
+$offsetGap: #{$smallGap + $height + $tinyGap}
+
+.floater-container
+  overflow: hidden
+  transition: .2s all
+  z-index: 31
+  &.backdrop
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background-color: $Backdrop
+
+  .floater-buttons
+    display: flex
+    flex-direction: column
+    position: absolute
+    button
+      min-width: $width
+      height: $height
+      border-radius: #{$width}
+      z-index: 1
+      margin: 0 0 $gapBetween
+      &:disabled
+        background-color: $Gray
+      &.floater-cancel
+        z-index: 2
+      &:last-child
+        margin: 0
+      svg
+        font-size: $iconFontSize
+        margin-left: .33rem
+        margin-right: .33rem
+        width: $iconFontSize
+        height: $iconFontSize
+    &.show
+      margin: #{-$gapBetween / 2}
+      padding: #{$gapBetween / 2}
+
+  .floater
+    background: $White
+    border-radius: .25rem
+    box-shadow: $ElevationShadow6
+    font-size: $fontSize
+    padding: 1.5rem 1rem
+    position: absolute
+    top: $tinyGap
+    bottom: $tinyGap
+    left: $tinyGap
+    right: $tinyGap
+    overflow-x: hidden
+    overflow-y: auto
+    z-index: 2
+
+  &.bottom-right
+    .floater-buttons
+      top: auto
+      bottom: $smallGap
+      right: $smallGap
+      left: auto
+    .floater
+      right: $offsetGap
+
+  &.bottom-left
+    .floater-buttons
+      top: auto
+      bottom: $smallGap
+      right: auto
+      left: $smallGap
+    .floater
+      left: $offsetGap
+
+  &.top-right
+    .floater-buttons
+      flex-direction: column-reverse
+      top: $smallGap
+      bottom: auto
+      right: $smallGap
+      left: auto
+      button
+        margin: $gapBetween 0 0
+        &:last-child
+          margin: 0
+    .floater
+      right: $offsetGap
+
+  &.top-left
+    .floater-buttons
+      flex-direction: column-reverse
+      top: $smallGap
+      bottom: auto
+      right: auto
+      left: $smallGap
+      button
+        margin: $gapBetween 0 0
+        &:last-child
+          margin: 0
+    .floater
+      left: $offsetGap
+
+  &.shrink
+    &.bottom-right,
+    &.bottom-left
+      .floater
+        top: auto
+    &.top-right,
+    &.top-left
+      .floater
+        bottom: auto
+
+.modal .floater-container.backdrop
+  background-color: $BackdropLight
